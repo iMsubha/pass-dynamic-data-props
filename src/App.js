@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Person from "./components/Person.jsx";
+import Product from "./components/Product";
 function App() {
+  const productList = [
+    { name: "Photoshop", price: "$67.99" },
+    { name: "Adobe", price: "$47.99" },
+    { name: "Premeire pro", price: "$77.99" },
+    { name: "Illustrator", price: "$97.99" },
+    { name: "Photo Editor", price: "$27.99" },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Product
+        name={productList[0].name}
+        price={productList[0].price}
+      ></Product>
+      <Product
+        name={productList[1].name}
+        price={productList[1].price}
+      ></Product>
+      <Product
+        name={productList[2].name}
+        price={productList[2].price}
+      ></Product>
+      <Product
+        name={productList[3].name}
+        price={productList[3].price}
+      ></Product>
+      <Product
+        name={productList[4].name}
+        price={productList[0].price}
+      ></Product> */}
+      {productList.map((product) => (
+        <Product name={product.name} price={product.price} />
+      ))}
+
+      <Person name="Hakib" job="SE"></Person>
+      <Person name="Sakib" job="Hero"></Person>
+      <Person name="Roksana" job="Doctor"></Person>
     </div>
   );
 }
